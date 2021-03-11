@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Fibonnaci</title>
+        <script>
+            let prev = 0;
+            let curr = 1;
+
+            console.log(`increment(): prev=${prev}, curr=${curr}`);
+
+            function increment(){
+                let fib = prev + curr;
+                console.log(`increment(): prev=${prev}, curr=${curr}, fib=${fib} `);
+                prev = curr;
+                curr = fib;
+                let currDisplay = document.getElementById("display");
+                currDisplay.innerHTML = `${currDisplay.innerHTML}, ${fib}`;
+            }
+
+
+            document.addEventListener("DOMContentLoaded", function(){
+                document.querySelector('button').onclick = increment;
+            });
+
+        </script>
+    </head>
+    <body>
+        <h1>Fibonnaci Sequence</h1>
+        <button>Increment</button>
+        <h2 id="display">1</h2>
+    </body>
+</html>
